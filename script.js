@@ -1,4 +1,4 @@
-navigator.serviceWorker
+const sw = await navigator.serviceWorker
   .getRegistrations()
   .then((r) => Promise.all(r.map((s) => s.unregister())))
   .then(() =>
@@ -21,4 +21,4 @@ navigator.serviceWorker
   })
   .catch((e) => e.message);
 
-export {};
+export {sw};
