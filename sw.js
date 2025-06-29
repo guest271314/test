@@ -24,5 +24,14 @@ addEventListener("fetch", async (e) => {
     e.respondWith(
       new Response("test");
     );
-  } 
+  } else {
+    e.respondWith(fetch(e.request.url, {
+    cache: "no-store",
+    headers: {
+      "pragma": "no-cache",
+      "cache-control": "no-cache",
+      "access-control-allow-origin": "*",
+    },
+  }));
+  }
 });
