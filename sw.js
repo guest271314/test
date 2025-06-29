@@ -22,7 +22,7 @@ addEventListener("fetch", async (e) => {
   if (e.request.url.includes("stream")) {
     console.log(...e.request.headers);
     e.respondWith(
-      new Response("test");
+      new Response("test")
     );
   } else {
     e.respondWith(fetch(e.request.url, {
