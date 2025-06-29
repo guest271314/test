@@ -2,7 +2,7 @@ const sw = await navigator.serviceWorker
   .getRegistrations()
   .then((r) => Promise.all(r.map((s) => s.unregister())))
   .then(() =>
-    navigator.serviceWorker.register(`./sw.js?=${new Date.getTime()}`, {
+    navigator.serviceWorker.register("./sw.js", {
       scope: "./",
       type: "module",
     })
